@@ -1,0 +1,71 @@
+body,
+.solution-4::before,
+.solution-5::before,
+.solution-6::before {
+  background: url('../../images/tiger.jpg') 0 / cover fixed;
+}
+
+.demo {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 16px;
+  width: 40em;
+  padding: 1em;
+}
+
+.problem-1 {
+  background: hsla(0,0%,100%,.3);
+}
+
+.solution-1 {
+  background: hsla(0,0%,100%,.7);
+}
+
+.solution-2 {
+  background: hsla(0,0%,100%,.7);
+  filter: blur(1px);
+}
+
+.solution-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: rgba(255,0,0,.5); /* debug */
+}
+
+.solution-4,
+.solution-5,
+.solution-6 {
+  background: hsla(0,0%,100%,.3);
+}
+
+.solution-4::before,
+.solution-5::before,
+.solution-6::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.solution-5::before {
+  background: rgba(255,0,0,.5);
+}
+
+.solution-6 {
+  overflow: hidden;
+}
+
+.solution-6::before {
+  margin: -40px;
+}

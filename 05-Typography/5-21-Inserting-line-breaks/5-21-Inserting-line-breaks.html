@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Inserting line breaks 插入换行</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="5-21.css" />
+</head>
+<body>
+  <p class="description">用CSS插入换行符的需求通常与定义列表有关，但有时也涉及其他场景。在通常情况下，采用定义列表是因为我们立志在互联网上以身作则，坚持使用合适的标签、合理的语义——哪怕在视觉上所要呈现的只是一行行的名值对，我们也会认真对待。</p>
+  <dl>
+    <dt>Name:</dt>
+    <dd>Lea Verout</dd>
+    <dt>Email:</dt>
+    <dd>Lea@verou.me</dd>
+    <dt>Location:</dt>
+    <dd>Earth</dd>
+  </dl>
+  <p class="description"><code>&lt;dt&gt;</code>和<code>&lt;dt&gt;</code>是块级元素，所有的名和值均占一行。接着给
+<code>&lt;dt&gt;</code>或（和）<code>&lt;dt&gt;</code>指定其他<code>display</code>属性值——走投无路时往往会乱来。</p>
+  <dl class="demo">
+    <dt>Name:</dt>
+    <dd>Lea Verout</dd>
+    <dt>Email:</dt>
+    <dd>Lea@verou.me</dd>
+    <dt>Location:</dt>
+    <dd>Earth</dd>
+  </dl>
+  <p class="description">Unicode中有个专门代表换行符的字符：0×000A。
+在CSS中，这个字符可以写作“\000A”或“\A”。
+用它用为::after的内容，并将其添加到每个<code>&lt;dd&gt;</code>元素的尾部。
+默认情况下，换行符会与相邻的其他空白符合并。
+若要保留源代码中的空白符和换行，试试<code>white-space: pre;</code>
+它会保留换行符、空格和制表符，但不会文字转行。</p>
+  <dl class="demo demo-2">
+    <dt>Name:</dt>
+    <dd>Lea Verout</dd>
+    <dt>Email:</dt>
+    <dd>Lea@verou.me</dd>
+    <dt>Location:</dt>
+    <dd>Earth</dd>
+  </dl>
+  <p class="description">现在给定义中再添加一个邮箱。</p>
+  <dl class="demo demo-3">
+    <dt>Name:</dt>
+    <dd>Lea Verout</dd>
+    <dt>Email:</dt>
+    <dd>Lea@verou.me</dd>
+    <dd>leaverou@mit.edu</dd>
+    <dt>Location:</dt>
+    <dd>Earth</dd>
+  </dl>
+  <p class="description">我们给每个<code>&lt;dd&gt;</code>后添加了一个换行符，每个值都会被分到单独一行中，甚至不需要换行的时候也是如此。
+若多个并列的值以逗号分隔并且排在同一行中会好得多。
+理想情况是，只对<code>&lt;dt&gt;</code>之前最后一个<code>&lt;dt&gt;</code>插入换行，
+而不是对所有的<code>&lt;dd&gt;</code>插入换行。
+不过，当前的CSS选择器还做不到，得换个思路。
+换行符不用不加在<code>&lt;dd&gt;</code>之后，而是加在<code>&lt;dt&gt;</code>之前。</p>
+  <dl class="demo demo-4">
+    <dt>Name:</dt>
+    <dd>Lea Verout</dd>
+    <dt>Email:</dt>
+    <dd>Lea@verou.me</dd>
+    <dd>leaverou@mit.edu</dd>
+    <dt>Location:</dt>
+    <dd>Earth</dd>
+  </dl>
+  <p class="description">这会让第一行变成空行，第一个<code>&lt;dt&gt;</code>之前也有了换行符。
+为规避这个问题，可以尝试使用以下选择器替代单纯的<code>dt</code>：</p>
+  <ul class="selector">
+    <li><code>dt:not(:first-child)</code></li>
+    <li><code>dt ~ dt</code></li>
+    <li><code>dd + dt</code></li>
+  </ul>
+  <p class="description">我们采用最后一种方案，
+因为即使多个<code>&lt;dt&gt;</code>共用同一个值的场景下，它也可以正常工作；
+而另外两个在这种情况下还是会出问题。
+理想情况下，希望“只在后面还跟着一个<code>&lt;dd&gt;</code>的<code>&lt;dd&gt;</code>尾部插入逗号”，
+但我们又一次遇上了那个限制，当前的选择器还做不到，得换个思路。
+在每个前面有<code>&lt;dd&gt;</code>的<code>&lt;dd&gt;</code>头部插入逗号。</p>
+  <dl class="demo demo-5">
+    <dt>Name:</dt>
+    <dd>Lea Verout</dd>
+    <dt>Email:</dt>
+    <dd>Lea@verou.me</dd><dd>leaverou@mit.edu</dd>
+    <dt>Location:</dt>
+    <dd>Earth</dd>
+  </dl>
+  <p class="description">千万要记住，
+如果结构代码在多个连续的<code>&lt;dd&gt;</code>之间包含空白符，逗号前会有个空格。
+修复方法有很多，根据实际情况选择最合适的。</p>
+</body>
+</html>

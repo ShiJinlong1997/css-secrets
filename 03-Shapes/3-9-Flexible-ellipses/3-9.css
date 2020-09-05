@@ -1,0 +1,20 @@
+.ellipses {
+  float: left;
+  width: 160px;
+  height: 90px;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: #fb3;
+}
+
+.ellipses-1 {
+  border-radius: 50%;
+}
+
+.half-ellipses {
+  border-radius: 50% / 100% 100% 0 0;
+}
+
+.quarter-ellipses {
+  border-radius: 100% 0 0 0;
+}

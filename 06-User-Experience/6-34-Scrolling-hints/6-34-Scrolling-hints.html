@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Scrolling hints 滚动提示</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="6-34.css" />
+</head>
+<body>
+  <p class="description">虽说现在滚动条用的少，但滚动条对于元素内容可滚动的提示还是有用。
+先从简单的结构代码开始，一个带有示意性内容的普通无序列表。
+给<code>&lt;ul&gt;</code>设置一些基本样式，让它的高度略短于内容。</p>
+  <ul class="names">
+    <li>Ada Catlace</li>
+    <li>Alan Purring</li>
+    <li>Steve Jobs</li>
+    <li>Tim Purrners-Lee</li>
+    <li>WekKitty</li>
+    <li>Json</li>
+    <li>Void</li>
+    <li>Neko</li>
+    <li>NaN</li>
+    <li>CatS</li>
+    <li>Vector</li>
+  </ul>
+  <p class="description">用径向渐变在顶部添加一条阴影：</p>
+  <ul class="names topbgig">
+    <li>Ada Catlace</li>
+    <li>Alan Purring</li>
+    <li>Steve Jobs</li>
+    <li>Tim Purrners-Lee</li>
+    <li>WekKitty</li>
+    <li>Json</li>
+    <li>Void</li>
+    <li>Neko</li>
+    <li>NaN</li>
+    <li>CatS</li>
+    <li>Vector</li>
+  </ul>
+  <p class="description">滚动列表时发现阴影会停留在相同的位置。这是背景图像默认的行为：
+它的位置是相对于元素固定的，不论元素的内容是否发生了滚动。这也适用于<code>background-attachment: fixed;
+它们的唯一区别是，当页面滚动时，后者是相对于视口固定的。</code>
+有什么办法能让背景图像和元素的内容一起滚动呢？
+<code>background-attachment</code>的新关键字<code>local</code>。</p>
+  <p class="description">这样设置会在滚动到顶端时看到一条阴影，向下滚动时阴影就消失。
+∴需要两层背景，一层生成一条阴影，另一层是遮挡阴影的白色矩形。
+生成阴影的背景<code>background-attachment: scroll;</code>（默认值）
+∵它得保持在原位；
+遮罩背景<code>background-attachment: local;</code>
+这样滚动到顶部时盖住阴影，向下滚动时露出阴影。
+用一道线性渐变生成矩形遮罩，并让它的颜色与容器的背景色一致。
+别忘了，“遮罩层”是一层逐渐淡化的线性渐变，
+只要让它成为一段从白色到透明白色的渐变，阴影露出就不会生硬突兀。</p>
+  <ul class="names twobg">
+    <li>Ada Catlace</li>
+    <li>Alan Purring</li>
+    <li>Steve Jobs</li>
+    <li>Tim Purrners-Lee</li>
+    <li>WekKitty</li>
+    <li>Json</li>
+    <li>Void</li>
+    <li>Neko</li>
+    <li>NaN</li>
+    <li>CatS</li>
+    <li>Vector</li>
+  </ul>
+  <p class="description">为了完成完整的遮罩效果，需要再添加两层渐变。</p>
+  <ul class="names fourbg">
+    <li>Ada Catlace</li>
+    <li>Alan Purring</li>
+    <li>Steve Jobs</li>
+    <li>Tim Purrners-Lee</li>
+    <li>WekKitty</li>
+    <li>Json</li>
+    <li>Void</li>
+    <li>Neko</li>
+    <li>NaN</li>
+    <li>CatS</li>
+    <li>Vector</li>
+  </ul>
+</body>
+</html>

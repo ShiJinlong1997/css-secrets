@@ -1,0 +1,24 @@
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+ul,
+ol,
+li,
+dl,
+dd,
+code {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: consolas;
+  font-weight: normal;
+}
+
+img { border: none; }

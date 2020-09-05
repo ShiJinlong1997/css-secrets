@@ -1,0 +1,104 @@
+.note {
+  float: left;
+  width: 300px;
+  padding: 1.5em;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: #58a; /* 回退样式 */
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: #fff;
+}
+
+.deg45-1 {
+  background: linear-gradient(-135deg,
+                transparent 2em, #58a 0);
+}
+
+.deg45-2 {
+  color: #000;
+  background: transparent;
+  background-image: linear-gradient(to bottom left,
+                      transparent 50%, rgba(0,0,0,.4) 0);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 2em 2em;
+  outline: 1px solid #000;
+}
+
+.deg45-3 {
+  background: linear-gradient(to bottom left,
+                transparent 50%, rgba(0,0,0,.4) 0)
+              no-repeat top right / 2em 2em,
+              linear-gradient(-135deg,
+                transparent 2em, #58a 0);
+}
+
+.deg45-4 {
+  background: linear-gradient(to bottom left,
+                transparent 50%, rgba(0,0,0,.4) 0)
+              no-repeat top right / 2em 2em,
+              linear-gradient(-135deg,
+                transparent 1.4em, #58a 0);
+}
+
+.angles-1 {
+  clear: left;
+  background: linear-gradient(to bottom left,
+                transparent 50%, rgba(0,0,0,.4) 0)
+              no-repeat top right / 2em 2em,
+              linear-gradient(-150deg,
+                transparent 1.4em, #58a 0);
+}
+
+.angles-2 {
+  background: linear-gradient(to bottom left,
+                transparent 50%, rgba(0,0,0,.4) 0)
+              no-repeat top right / 3em 1.73em,
+              linear-gradient(-150deg,
+                transparent 1.4em, #58a 0); 
+}
+
+.angles-3 {
+  position: relative;
+  background: linear-gradient(-150deg,
+                transparent 1.5em, #58a 0);
+}
+
+.angles-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.73em;
+  height: 3em;
+  background: linear-gradient(to bottom left,
+                transparent 50%, rgba(0,0,0,.4) 0)
+              top right no-repeat;
+  transform: rotate(-30deg);
+}
+
+.angles-4 {
+  position: relative;
+  background: linear-gradient(-150deg,
+                transparent 1.5em, #58a 0);
+  border-radius: .5em;
+}
+
+.angles-4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.73em;
+  height: 3em;
+  border-bottom-left-radius: inherit;
+  background: linear-gradient(to bottom left,
+                transparent 50%,
+                rgba(0,0,0,.4) 0,
+                rgba(0,0,0,.4))
+              top right no-repeat;
+  transform: translateY(-1.3em) rotate(-30deg);
+  box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+  transform-origin: bottom right;
+}

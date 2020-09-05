@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Complex background patterns 连续的图像边框</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="2-8.css" />
+</head>
+<body>
+  <div class="problem">
+    <p class="description">有时我们需要图片做边框而非背景。
+一个元素有一圈装饰性边框，
+就像图片被裁剪进边框的方环区域。
+不仅如此，还希望元素在缩放时，
+图片也自动延伸并覆盖边框区域。
+
+
+<code>border-image</code>行不通，
+先回忆一下它如何工作。
+它的原理是九宫格伸缩法：
+把图片切成九块，
+再应用到元素边框相应的边和角。
+
+
+先用两个<code>&lt;div&gt;</code>实现再优化，
+一个把石雕图设为背景，
+另一个存放内容并设置纯白背景，
+然后覆盖在前者之上。</p>
+    <div class="something-meaningful" style="margin-top: 0;">
+      <div>用两个<code>&lt;div&gt;</code>实现连续图像边框效果，
+一个把石雕图片设为背景，
+另一个存放内容并设置纯白背景，
+然后覆盖在前者之上</div>
+    </div>
+    <div class="something-meaningful">
+      <div>I have a nice stone art
+border, don’t I look pretty?
+Bacon ipsum dolor amet
+fatback alcatra tenderloin
+chicken shank, sausage
+pork meatball leberkas tritip
+spare ribs salami filet
+mignon ball tip cow.
+这是图片边框在高度变化时的情况</div>
+    </div>
+  </div>
+  <div class="problem">
+    <p class="description">实现需求只用一个元素即可，
+这要感谢背景与边框（第三版）
+w3.org/TR/css3-background
+引入了对CSS渐变和背景的扩展。
+
+
+
+
+主要思路是石雕背景图片上
+加一层纯白背景。
+为了让下层的背景图片透过
+边框区域显示出来，
+需要给两层背景指定不同的<code>background-clip</code>值。
+
+∵只能在多重背景的最底层
+设置背景色，
+∴需要一道从白色过渡到白色的
+CSS渐变实现纯白色背景的效果。</p>
+    <div class="more-meaningful" style="margin-top: 0;
+                                        background-origin: padding-box;"
+    >∵默认<code>background-origin: padding-box;</code>
+∴边框图片有种怪异的拼接效果，
+这实际上是背景图片以平铺的方式蔓延到了border box.</div>
+    <div class="more-meaningful">I have a nice stone art
+border, don’t I look pretty?
+Bacon ipsum dolor amet
+fatback alcatra tenderloin
+chicken shank, sausage
+pork meatball leberkas tritip
+spare ribs salami filet
+mignon ball tip cow.
+<code>background-origin: border-box;</code></div>
+  </div>
+    <div class="clear vintage-envelope">老式信封样式的边框
+
+<code>background-size</code>
+改变条纹的宽度
+
+<code>border</code>
+改变整个边框的厚度</div>
+  <div class="vintage-envelope-bdi">与石雕的例子不同，
+<code>border-image</code>也能实现。
+不过<code>border-image</code>方法也存在一些问题：
+<ul class="issue"><li>改变<code>border-image-slice</code>时，
+需要同时修改<code>border-width</code>来让它们相互匹配</li>
+<li><code>border-image-slice</code>属性
+不能用em单位，
+只能把边框厚度指定为像素单位。</li>
+<li>∵通过色标的位置设置条纹的宽度，
+∴改变条纹宽度时要改四处。</li></ul></div>
+  <div class="clear marching-ants">蚂蚁行军边框是一种虚线边框，看起来在不断转动，像排队前进的蚂蚁一样。
+
+为了创建蚂蚁行军效果，我们用“老式信封”技巧的变种，
+条纹转变为黑白两色，并把边框的宽度减少至1px，
+
+然后再把<code>background-size</code>改为某个合适的值。
+
+最后把<code>background-position</code>以动画的方式改变为100%，就能让它滚动起来了。</div>
+</body>
+</html>

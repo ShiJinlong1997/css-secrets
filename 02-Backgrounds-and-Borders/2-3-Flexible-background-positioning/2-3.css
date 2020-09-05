@@ -1,0 +1,33 @@
+.solution {
+  float: left;
+}
+
+.code-pirate {
+  width: 224px;
+  height: 126px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-top: 16px;
+  margin-left: 16px;
+  /* background简写属性中的background-position是回退方案 */
+  background: #58a url('../../images/code-pirate.svg') bottom right no-repeat;
+  background-position: right 20px bottom 10px;
+  color: #fff;
+}
+
+.description {
+  width: 22em;
+  margin-left: 16px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.bgo-cb {
+  padding: 10px;
+  background-position: right 10px bottom;
+  background-origin: content-box;
+}
+
+.bgp-calc {
+  background-position: calc(100% - 20px) calc(100% - 10px);
+}

@@ -1,0 +1,60 @@
+.description {
+  width: 32em;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+dl {
+  width: 30em;
+  padding: .5em;
+  margin-top: 16px;
+  margin-left: 16px;
+  outline: 2px solid #808080;
+}
+
+dd {
+  font-weight: bold;
+}
+
+.demo > dt,
+.demo > dd {
+  display: inline;
+}
+
+.demo-2 > dd::after,
+.demo-3 > dd::after,
+.demo-4 > dt::before,
+.demo-5 > dd + dt::before {
+  content: '\A';
+  white-space: pre;
+}
+
+.selector {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.selector > li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.selector > li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  background: yellowgreen;
+}
+
+.demo-5 > dd + dd::before {
+  content: ', ';
+  font-weight: bold;
+}

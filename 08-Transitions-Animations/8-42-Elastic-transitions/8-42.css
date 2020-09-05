@@ -1,0 +1,22 @@
+@keyframes bounce {
+  60%,
+  80%,
+  100% {
+    transform: translateY(400px);
+    animation-timing-function: ease;
+  }
+
+  70% { transform: translateY(300px); }
+  90% { transform: translateY(360px); }
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f26749;
+  background-image: radial-gradient(circle at 30% 30%,
+                                    rgba(255,255,255,.8),
+                                    transparent 60%);
+  animation: bounce 3s cubic-bezier(.755,.05,.855,.06) forwards;
+}

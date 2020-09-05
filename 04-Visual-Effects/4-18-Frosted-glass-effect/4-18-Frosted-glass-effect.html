@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Frosted glass effect 毛玻璃效果</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="4-18.css" />
+</head>
+<body>
+  <main class="demo problem-1">
+    <blockquote>
+      "半透明颜色最初使用的场景之一是作为背景。将其叠放在照片类或其他花哨的背层之上，可以减少对比度，确保文本的可读性。这种效果虽有视觉冲击力，但可能导致文字很难阅读"
+      <footer>--
+        <cite>
+          难题
+        </cite>
+      </footer>
+    </blockquote>
+  </main>
+
+  <main class="demo solution-1">
+    <blockquote>
+      "相信你可以察觉到，文字确实难以看清，因为后面的图片太过花哨了，而文字的背景色只有30%的不透明度。当然，我们可以提升文字背景的不透明度来增加文本的可读性，不过这样一来整个效果就不太生动了"
+      <footer>--
+        <cite>
+          提升文字背景的不透明度
+        </cite>
+      </footer>
+    </blockquote>
+  </main>
+  <main class="demo solution-2">
+    <blockquote>
+      "借助<code>blur()</code>滤镜我们在CSS中获得了对元素进行模糊处理的能力。我们在SVG中很早就可以使用模糊滤镜了，而这个CSS滤镜本质上就是它的硬件加速对应版本。不完，若直接使用<code>blur()</code>滤镜，整个元素都会被模糊，文本反而变得更无法阅读了。"
+      <footer>--
+        <cite>
+          借助<code>blur()</code>滤镜
+        </cite>
+      </footer>
+    </blockquote>
+  </main>
+  <main class="demo solution-3">
+    <blockquote>
+      "假设大背景的CSS<code>background-attachment: fixed;</code>，这种情况是有可能的，只不过不太常见。由于我们不能直接对元素本身进行模糊处理，就对一个伪元素进行处理，然后将其定位到元素的下层，它的背景将会无缝匹配<code>&lt;body&gt;</code>的背景。首先，我们添加一个伪元素，将其绝对定位，并把所有偏移量置为0，这样就可以将它完整地覆盖到<code>&lt;main&gt;</code>元素之上。半透明的红色背景是为了看清楚做了什么，否则很难调试透明的（即不可见）元素。"
+      <footer>--
+        <cite>
+          解决方案
+        </cite>
+      </footer>
+    </blockquote>
+  </main>
+  <main class="demo solution-4">
+    <blockquote>
+      "现在该把红色背景换掉了，换成跟背景层完全匹配的背景。要实现这一点，要让伪元素的背景和<code>&lt;body&gt;</code>的背景一致。现在再试试模糊处理。"
+      <footer>--
+        <cite>
+          解决方案
+        </cite>
+      </footer>
+    </blockquote>
+  </main>
+  <main class="demo solution-5">
+    <blockquote>
+      "这跟期望的效果已经很接近了。模糊效果在中心区域看起来非常完美，但在接近边缘处会逐渐消退。这是因为模糊效果会削减实色像素所能覆盖的范围，削减的幅度正是模糊半径的长度。对伪元素应用一个红色背景有助于看清真相。"
+      <footer>--
+        <cite>
+          解决方案
+        </cite>
+      </footer>
+    </blockquote>
+  </main>
+  <main class="demo solution-6">
+    <blockquote>
+      "为了补偿这种情况，我们需要让伪元素相对其宿主元素的尺寸再向外扩大至少20px（即它的模糊半径）。可以通过-20px的外边距来达到目的，由于不同浏览器的模糊算法可能有差异，用一个更大的绝对值（如-30px）会更保险些。此方法能修复边缘模糊消退的问题，但是有一圈模糊效果超出了容器的情况。对<code>&lt;main&gt;</code>元素应用<code>overflow: hidden;</code>即可。"
+      <footer>--
+        <cite>
+          解决方案
+        </cite>
+      </footer>
+    </blockquote>
+  </main>
+</body>
+</html>

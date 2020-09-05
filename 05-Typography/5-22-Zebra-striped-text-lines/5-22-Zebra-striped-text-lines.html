@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Zebra striped text lines 文本行的斑马条纹</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="5-22.css" />
+</head>
+<body>
+  <p class="description">对整个元素设置统一的背景图像，一次性加上所有的斑马条纹。
+CSS中用渐变生成背景图像，而且可以用em单位设定背景尺寸，
+这样就能自动适应<code>font-size</code>自动变化。
+现在在这段代码上创建水平条纹背景，加上斑马条纹。</p>
+  <code class="demo">while (true) {
+  let d = new date();
+
+  if (1 == d.getDate() &amp;&amp;
+      3 == d.getMonth()) {
+    alert('TROLOLOL');
+  }
+}</code>
+  <p class="description">∵每个背景贴片需要覆盖两行代码
+∴它的<code>background-size</code>需要设置成<code>line-height</code>的两倍，</p>
+  <code class="demo demo-1">while (true) {
+  let d = new date();
+
+  if (1 == d.getDate() &amp;&amp;
+      3 == d.getMonth()) {
+    alert('TROLOLOL');
+  }
+}</code>
+  <p class="description">这个结果跟预期已经相当接近了，但代码行和条纹是错位的。
+第一条条纹从容器的最顶部开始的，这是背景图像最平常的表现。
+但是代码不是从那里开始的，因为那样排版显得很局促。
+<code>padding: .5em;</code> 这个距离正是条纹与理想位置之间的偏差。
+<code>background-origin: padding-box;</code> 这个默认值改成
+<code>background-origin: content-box;</code></p>
+  <code class="demo demo-2">while (true) {
+  let d = new date();
+
+  if (1 == d.getDate() &amp;&amp;
+      3 == d.getMonth()) {
+    alert('TROLOLOL');
+  }
+}</code>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Sticky footers 紧贴底部的页脚</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="7-41.css" />
+</head>
+<body>
+  <section>
+    <header>
+      <h1>Site name</h1>
+    </header>
+    <main>
+      <p>在网页设计中，存在一个相当古老但又相当常见的问题，它是前端工程师绕不开的坎。这个问题可以简单地概括如下：有一个具有块级样式的页脚（比如它设置了背景或阴影），当页面内容足够长时它一切正常，而当页面较短时（比如错误信息页面）就会出现问题。此时的问题在于，页脚不能像我们期望中那样“紧贴”在视口的最底部，而是紧跟在内容的下方。
+然后我们给页面加上一些基本样式，再给页脚加上一层背景。</p>
+    </main>
+    <footer>
+      <p>&copy; 2015 No rights reserved.</p>
+      <p>Made with &hearts; by an anonymous pastafarian.</p>
+    </footer>
+  </section>
+
+  <section>
+    <header>
+      <h1>Site name</h1>
+    </header>
+    <main>
+      <p>现在，让我们把页面内容缩短一些。此时页脚沉不到底的问题就完全暴露出来了！</p>
+    </main>
+    <footer>
+      <p>&copy; 2015 No rights reserved.</p>
+      <p>Made with &hearts; by an anonymous pastafarian.</p>
+    </footer>
+  </section>
+
+  <section class="meaningful">
+    <header>
+      <h1>Site name</h1>
+    </header>
+    <main>
+      <p>首先，对<code>&lt;body&gt;</code>元素设置<code>display: flex;</code>
+因为它是这三个主要区块的父元素，当父元素获得这个属性后，就能对其子元素触发“伸缩盒布模型”。
+还需要设置<code>flex-flow: column;</code>
+否则子元素会被水平排放在一行上。
+现在所有元素的宽度都占据了整个视口的宽度，而它们的高度也都是由其自身的内容来决定的。
+为使Flexbox发挥真正的威力，首先要为<code>&lt;body&gt;</code>设置
+<code>min-height: 100vh;</code>
+这样它就至少会占据整个视口的高度，不过子元素的高度仍是以各自的内容为准的。
+此时期望的是，页头和页脚的高度由其内部因素来决定，而内容区块的高度能自动伸展并占满所有的可用空间。只要给<code>&lt;main&gt;</code>设置<code>flex: 1;</code>（大于0即可）就能实现这个效果了。</p>
+    </main>
+    <footer>
+      <p>&copy; 2015 No rights reserved.</p>
+      <p>Made with &hearts; by an anonymous pastafarian.</p>
+    </footer>
+  </section>
+
+  <section class="meaningful">
+    <header>
+      <h1>Site name</h1>
+    </header>
+    <main>
+      <p>现在页脚能够紧贴底部了</p>
+    </main>
+    <footer>
+      <p>&copy; 2015 No rights reserved.</p>
+      <p>Made with &hearts; by an anonymous pastafarian.</p>
+    </footer>
+  </section>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Complex background patterns 复杂的背景图案</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="2-6.css" />
+</head>
+<body>
+  <div class="bgig grids-1"></div>
+  <div class="bgig grids-1-1"></div>
+  <div class="bgig grids-1-2"></div>
+  <p class="description">把多个渐变图案组合起来，让它们透过彼此的透明区域显现时，神奇的事情就发生了。
+按照这个思路，我们首先想到的可能就是把水平和垂直的条纹叠加起来，从而得到各种样式的网格。</p>
+  <div class="bgig clear grids-2"></div>
+  <div class="bgig grids-2-1"></div>
+  <div class="bgig grids-2-2"></div>
+  <p class="description">有时希望网格中每个格子的大小可以调整，
+而网格线条的粗细同时保持固定。
+举例来说，图纸辅助线的网络就是这种情况。
+此例色标使用长度而不是百分比</p>
+  <div class="bgig clear polkadot"></div>
+  <p class="description" style="margin-left: 448px;">目前为止，我们一直在用线性渐变。
+但是，径向渐变同样也实用，
+它能创建圆形、椭圆、或是它们的一部分。
+径向渐变能够创建简单的图案是圆点的阵列。</p>
+  <div class="bgig clear polkadot-2"></div>
+  <div class="bgig polkadot-2-1"></div>
+  <div class="bgig polkadot-2-2"></div>
+  <p class="description">生成两层圆点阵列图案，
+再把背景定位错开。</p>
+  <div class="bgig clear compose-get-square"></div>
+  <div class="bgig failure-diagonal"></div>
+  <div class="bgig failure-diagonal-other-half"></div>
+  <p class="description">棋盘用平铺生成，平铺成这个图案的典型贴片包含两种不同颜色的方块，且相互间隔。
+生成方块用两个直角三角形来拼合，回忆一下最初失败的实现斜向条纹。</p>
+  <div class="bgig clear half-original-size-compose"></div>
+  <div class="bgig half-original-size"></div>
+  <div class="bgig half-original-size-other-half"></div>
+  <p class="description">直接用两个三角形组合正方形会得到一片实色。
+应该把三角形的直角边缩短一半，色标的位置从50%改为25%即可。
+试着把它们组合一下</p>
+  <div class="bgig clear secondg-change-bgp"></div>
+  <div class="bgig firstg"></div>
+  <div class="bgig secondg"></div>
+  <p class="description">把第二层渐变在水平和垂直方向
+均移动贴片长度的一半即可。
+<code>background-position-x: -15px;</code>
+<code>background-position-x: 15px;</code></p>
+  <div class="bgig clear checkerboards"></div>
+  <div class="bgig checkerboards-half"></div>
+  <div class="bgig checkerboards-other-half"></div>
+  <p class="description">想要的效果有了，但这本质上只是棋盘的一半。
+需要把现有的一组渐变重复一份得到另一组正方形，再偏移它们的定位值。</p>
+  <div class="bgig clear hue-wheel">hue wheel</div>
+  <svg class="clear" xmlns="http://www.w3.org/2000/svg"
+       width="100" height="100" fill-opacity=".25"
+       style="float: left;
+              margin-top: 16px;
+              margin-left: 16px;">
+    <rect x="50" width="50" height="50" />
+    <rect y="50" width="50" height="50" />
+  </svg>
+  <svg class="tile-svg" style="float: left;
+              margin-top: 16px;
+              margin-left: 16px;
+              background: #eee url('data:image/svg+xml,\
+                          <svg xmlns="http://www.w3.org/2000/svg" \
+                               width="100" height="100" \
+                               fill-opacity=".25">\
+                            <rect x="50" width="50" height="50" /> \
+                            <rect y="50" width="50" height="50" /> \
+                          </svg>');
+              background-size: 30px 30px;></svg>
+</body>
+</html>

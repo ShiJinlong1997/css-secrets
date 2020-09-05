@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+.image-slider {
+  position: relative;
+  display: inline-block;
+}
+
+/* w50p -- initial width */
+/* ov-h -- make it clip the image */
+.image-slider > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.image-slider > div > img {
+  filter: sepia();
+}
+
+.image-slider img {
+  display: block;
+  user-select: none;
+}
+
+/* 
+用input:in-range代替input简单的input选择符，是为了
+只在浏览器支持范围输入控件时才对它设置样式。
+然后，我们就能利用层叠机制把它在旧版浏览器下隐藏掉或设置为其他样式
+*/
+
+.image-slider input:in-range {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: 0;
+  filter: contrast(5);
+  mix-blend-mode: luminosity;
+  transform: scale(2);
+  transform-origin: bottom left;
+}

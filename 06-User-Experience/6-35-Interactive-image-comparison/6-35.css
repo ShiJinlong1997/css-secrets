@@ -1,0 +1,42 @@
+.image-slider {
+  position: relative;
+  display: inline-block;
+}
+
+/* w50p -- initial width */
+/* ov-h -- make it clip the image */
+.image-slider > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  resize: horizontal;
+}
+
+.image-slider > div::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  padding: 5px;
+  background: linear-gradient(-45deg,
+                              #fff 50%,
+                              transparent 0);
+  background-clip: content-box;
+  cursor: ew-resize;
+  z-index: 1;
+}
+
+.image-slider > div > img {
+  filter: sepia();
+}
+
+.image-slider img {
+  display: block;
+  user-select: none;
+}

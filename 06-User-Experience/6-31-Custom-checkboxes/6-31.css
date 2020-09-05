@@ -1,0 +1,75 @@
+.description {
+  width: 32em;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+form {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+label { text-transform: capitalize; }
+
+.basic input[type="checkbox"] + label::before {
+  /* 不换行空格 */
+  content: '\a0';
+  display: inline-block;
+  vertical-align: .2em;
+  width: .8em;
+  height: .8em;
+  margin-right: .2em;
+  line-height: .65;
+  text-indent: .15em;
+  border-radius: .2em;
+  background: silver;
+}
+
+.basic-1 input[type="checkbox"]:checked + label::before  {
+  content: '\2713';
+  background: yellowgreen;
+}
+
+.hidebox input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+
+.otherstatus input[type="checkbox"]:focus + label::before { box-shadow: 0 0 .1em .1em #58a; }
+
+.otherstatus input[type="checkbox"]:disabled + label::before {
+  color: #555;
+  background: #808080;
+  box-shadow: none;
+}
+
+.on-off input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+
+.on-off input[type="checkbox"] + label {
+  display: inline-block;
+  padding: .3em .5em;
+  border: 1px solid rgba(0,0,0,.2);
+  font-size: 1.5em;
+  text-align: center;
+  background: #ccc;
+  background-image: linear-gradient(
+                      #ddd, #bbb);
+  box-shadow: 0 1px #fff inset;
+  border-radius: .3em;
+  text-shadow: 0 1px 1px #fff;
+}
+
+.on-off input[type="checkbox"]:hover + label { background-image: linear-gradient(
+                                                                   #bbb, #ddd); }
+
+.on-off input[type="checkbox"]:checked + label,
+.on-off input[type="checkbox"]:active + label {
+  border-color: rgba(0,0,0,.3);
+  background: #bbb;
+  box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+}

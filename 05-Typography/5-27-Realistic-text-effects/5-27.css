@@ -1,0 +1,156 @@
+.demo,
+.stroked,
+.glowing,
+.glowing-1,
+.extruded,
+.extruded-1,
+.description {
+  float: left;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.demo,
+.description {
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.cl,
+.description { clear: left; }
+
+.tac { text-align: center; }
+
+.description {
+  width: 32em;
+}
+
+.demo {
+  width: 200px;
+  padding: .5em;
+}
+
+.stroked,
+.glowing,
+.glowing-1,
+.extruded,
+.extruded-1 {
+  width: 216px;
+  font-size: 80px;
+  letter-spacing: -4px;
+}
+
+.stroked {
+  color: #fff;
+  background: #ff1493;  
+}
+
+.glowing,
+.glowing-1 {
+  text-decoration: none;
+  color: #fff;
+  background: #203;
+}
+
+.glowing {
+  text-shadow: 0 0 .1em,
+               0 0 .3em;
+}
+
+.glowing-1 {
+  transition: 1s;
+}
+
+.glowing-1:hover {
+  text-shadow: 0 0 .1em,
+               0 0 .3em;
+}
+
+.extruded {
+  color: #fff;
+  background: #58a;
+  text-shadow: 0 1px hsl(0,0%,85%),
+               0 2px hsl(0,0%,80%),
+               0 3px hsl(0,0%,75%),
+               0 4px hsl(0,0%,70%),
+               0 5px hsl(0,0%,65%),
+               0 5px 10px #000;
+}
+
+.extruded-1 {
+  color: #fff;
+  background: hsl(0,50%,45%);
+  text-shadow: 1px 1px #000,
+               2px 2px #000,
+               3px 3px #000,
+               4px 4px #000,
+               5px 5px #000,
+               6px 6px #000,
+               7px 7px #000,
+               8px 8px #000;
+}
+
+.letterpress-1-1,
+.letterpress-1-2 {
+  color: hsl(210, 13%, 30%);
+  background: hsl(210, 13%, 60%);
+}
+
+.letterpress-1-2,
+.letterpress-2-1 {
+  text-shadow: 0 1px 1px hsla(0,0%,100%,.8);
+  /* text-shadow: 0 .03em .03em hsla(0,0%,100%,.8); */
+}
+
+.letterpress-2-1,
+.letterpress-2-2 {
+  color: hsl(210, 13%, 60%);
+  background: hsl(210, 13%, 30%);
+}
+
+.letterpress-2-2 {
+  text-shadow: 0 -1px 1px #000;
+}
+
+.stroked-1 {
+  text-shadow:  1px  1px #000,
+               -1px -1px #000,
+                1px -1px #000,
+               -1px  1px #000;
+}
+
+.stroked-2 {
+  text-shadow: 0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000;
+}
+
+.stroked-3 {
+  text-shadow:  6px  6px #000,
+               -6px -6px #000,
+                6px -6px #000,
+               -6px  6px #000;
+}
+
+.usesvg {
+  position: relative;
+  float: left;
+  margin-top: 16px;
+  margin-left: 16px;
+  font-size: 5em;
+  line-height: .5;
+  color: #fff;
+  background: #ff1493;
+}
+
+.usesvg text { fill: currentColor; }
+.usesvg svg { overflow: visible; }
+
+.usesvg use {
+  stroke: #000;
+  stroke-width: 6;
+  stroke-linejoin: round;
+}

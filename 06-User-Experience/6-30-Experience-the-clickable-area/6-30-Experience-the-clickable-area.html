@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Experience the clickable area 扩大可点击区域</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="6-30.css" />
+</head>
+<body>
+  <p class="description">鼠标移入元素某侧时自动滑入，这涉及放大热区的问题。</p>
+  <button class="bdw">+</button>
+  <p class="description">扩张热区最简单的办法是设置一圈透明边框，
+∵鼠标对元素边框的交互也会触发鼠标事件，
+这一点是描边和投影所不及的。
+<code>background-clip: padding-box;</code>是必须的，
+∵背景默认蔓延到边框的下层。</p>
+  <p class="description">但是好景不长，如果需要给按钮添加边框要怎么办？
+很简单，可以内嵌投影来模拟出一道边框。</p>
+  <p class="description">与边框不同，<code>box-shadow</code>可以同时指定多层投影。
+但把内嵌投影和（常规的）外部投影组合起来，会得到怪异的效果。
+∵外部投影绘制在<code>border-box</code>外部。
+比如，按钮添加真实的模糊化投影，来营造一种“浮出水面”的效果。</p>
+  <button class="bxsh">+</button>
+  <p class="description">但是真的这么做了不会和产生期望效果。
+边框会影响布局，而且在某些某些场景下根本不可能利用边框。
+∴放弃边框，用伪元素代表其宿主元素来响应鼠标交互。
+在按钮上层覆盖一层透明的伪元素，
+并让伪元素在四个方向上都比宿主元素大出10px。</p>
+</body>
+</html>

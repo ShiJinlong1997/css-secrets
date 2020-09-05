@@ -1,0 +1,22 @@
+.demo {
+  float: left;
+  width: 320px;
+  height: 180px;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: #fec210;
+  white-space: pre-wrap;
+}
+
+.bxsh-normal {
+  box-shadow: 2px 2px 4px #000;
+}
+
+.bxsh-adjacent-sides {
+  box-shadow: 4px 4px 8px -4px #000;
+}
+
+.bxsh-opposite-sides {
+  box-shadow:  4px 0 8px -4px #000,
+              -4px 0 8px -4px #000;
+}

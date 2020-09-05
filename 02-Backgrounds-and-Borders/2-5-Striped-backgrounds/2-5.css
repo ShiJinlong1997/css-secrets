@@ -1,0 +1,86 @@
+.bgig {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 12;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+  color: #fff;
+}
+
+.basic-vertical-gradient {
+  background-image: linear-gradient(#fb3, #58a);
+}
+
+.bring-color-stops {
+  background-image: linear-gradient(#fb3 20%, #58a 80%);
+}
+
+.same-color-stops {
+  background-image: linear-gradient(#fb3 50%, #58a 50%);
+}
+
+.set-bgsz {
+  background-size: 100% 45px;
+  line-height: 2;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.equal-widths {
+  background-image: linear-gradient(#fb3 50%, #58a 50%);  
+}
+
+.unequal-widths {
+  background-image: linear-gradient(#fb3 30%, #58a 30%);
+}
+
+.color-stops-pos-zero {
+  background-image: linear-gradient(#fb3 30%, #58a 0);
+}
+
+.three-colors {
+  background-image: linear-gradient(#fb3 33.3%,
+                                    #58a 0,
+                                    #58a 66.6%,
+                                    #9acd32 0);
+  line-height: 12;
+  text-align: center;
+}
+
+.vertical-stripes {
+  /* 90deg == to right */
+  background-image: linear-gradient(90deg,
+                      #fb3, 50%, #58a 0);
+  background-size: 45px 100%;
+}
+
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(45deg,
+                      #fb3, #fb3 22px, #58a 0, #58a 44px);
+  line-height: 2;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.subtle-stripes {
+  background-image: repeating-linear-gradient(45deg,
+                      #79b, #79b 22px, #58a 0, #58a 44px);
+  line-height: 2;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.subtle-stripes-2 {
+  background: #58a;
+  background-image: repeating-linear-gradient(45deg,
+                      hsla(0,0%,100%,.2),
+                      hsla(0,0%,100%,.2) 22px,
+                      transparent 0,
+                      transparent 44px);
+  line-height: 2.5;
+  white-space: pre-wrap;
+  text-align: left; 
+}

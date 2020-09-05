@@ -1,0 +1,11 @@
+@keyframes loader {
+  100% { background-position-x: -800px; }
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  background: url('../../images/loader.png') 0 0;
+  overflow: hidden;
+  animation: loader 1s infinite steps(8);
+}

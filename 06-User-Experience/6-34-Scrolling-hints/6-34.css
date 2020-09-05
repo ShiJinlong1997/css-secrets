@@ -1,0 +1,62 @@
+.description,
+.names {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.description {
+  width: 32em;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.names {
+  overflow: auto;
+  width: 18em;
+  height: 8em;
+  padding: .3em .5em;
+  border: 1px solid silver;
+}
+
+.topbgig {
+  background: radial-gradient(at top,
+                rgba(0,0,0,.2), transparent 70%) no-repeat;
+  background-size: 100% 16px;
+  background-attachment: local;
+}
+
+.twobg {
+  background: linear-gradient(
+                #fff 40%, transparent),
+              radial-gradient(at 50% 0,
+                rgba(0,0,0,.2), transparent 70%) no-repeat;
+  background-repeat: no-repeat;
+  background-size: 100% 40px,
+                   100% 16px;
+  background-attachment: local, 
+                         scroll;
+}
+
+.fourbg {
+  background: linear-gradient(
+                #fff 40%, transparent),
+              radial-gradient(at 50% 0,
+                rgba(0,0,0,.2), transparent 70%) no-repeat,
+              linear-gradient(0,
+                #fff 40%, transparent),
+              radial-gradient(at 50% 100%,
+                rgba(0,0,0,.2), transparent 70%) no-repeat;
+  background-repeat: no-repeat;
+  background-position: top center,
+                       top center,
+                       bottom center,
+                       bottom center;
+  background-size: 100% 40px,
+                   100% 16px, 
+                   100% 40px,
+                   100% 16px;
+  background-attachment: local, 
+                         scroll,
+                         local, 
+                         scroll;
+}

@@ -1,0 +1,29 @@
+.description {
+  width: 32em;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.demo {
+  display: block;
+  width: 26em;
+  padding: .5em;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  background: #f6ece9;
+}
+
+.demo-1,
+.demo-2 {
+  background-image: linear-gradient(
+                     rgba(0,0,0,.1) 50%, transparent 0);
+  background-size: auto 3em;
+}
+
+.demo-2 {
+  background-origin: content-box;
+}

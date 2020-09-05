@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Intrinsic-sizing 自适应内部元素</title>
+  <link rel="stylesheet" href="7-36.css" />
+</head>
+<body>
+  <section>
+  <p>用HTML5来标记图片元素，再给它添加一道边框。</p>
+  <figure>
+    <img src="../../images/adamcatlace.jpg" alt="cat" />
+    <figcaption>
+      The great Sir Adam Catlace was named after
+      Countess Ada Lovelace, the first programmer.
+    </figcaption>
+  </figure>
+  <p>但我们实际上希望这个figure元素跟它所包含的图片一样宽。</p>
+  </section>
+
+  <section>
+  <p><code>min-content</code>关键字将解析为这个容器内部最大的不可断行元素的宽度</p>
+  <figure class="meaningful">
+    <img src="../../images/adamcatlace.jpg" alt="cat" />
+    <figcaption>
+      The great Sir Adam Catlace was named after
+      Countess Ada Lovelace, the first programmer.
+    </figcaption>
+  </figure>
+  <p>（即最宽的单词、图片或具有固定宽度的盒元素）</p>
+  </section>
+</body>
+</html>

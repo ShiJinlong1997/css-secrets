@@ -1,0 +1,31 @@
+img {
+  float: left;
+  width: 640px;
+  height: 440px;
+  transition: .5s filter;
+}
+
+img:hover,
+img:focus {
+  filter: none;
+}
+
+.demo-1 {
+  filter: sepia(1) saturate(4) hue-rotate(295deg);
+}
+
+.tinted-image {
+  float: left;
+  width: 640px;
+  height: 440px;
+  background-color: hsl(335,100%,50%);
+  background-image: url('../../images/tiger.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+  transition: .5 background-color;
+}
+
+.tinted-image:hover {
+  background-color: transparent;
+}

@@ -1,0 +1,29 @@
+.description,
+.demo,
+.demo-1 {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.description { width: 32em; }
+
+.demo,
+.demo-1 { width: 20em; }
+
+.demo {
+  background: linear-gradient(
+                 #808080, #808080)
+              no-repeat;
+  background-size: 100% 1px;
+  text-shadow:  .05em 0 #fff,
+               -.05em 0 #fff;
+  background-position: 0 1em;
+}
+
+.demo-1 {
+  background: linear-gradient(90deg,
+                #808080 60%, transparent 0)
+              repeat-x;
+  background-size: .2em 2px;
+  background-position: 0 1em;
+}

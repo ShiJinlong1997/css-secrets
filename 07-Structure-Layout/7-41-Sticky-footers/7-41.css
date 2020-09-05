@@ -1,0 +1,41 @@
+section {
+  width: 26em;
+  height: 16em;
+  border: 2px solid #808080;
+  margin-top: 16px;
+  margin-left: 16px;
+  overflow: auto;
+}
+
+header,
+main,
+footer {
+  margin-top: 1em;
+  padding: 0 2em;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  font-size: 14px;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+
+footer {
+  background-color: #000;
+  background-origin: border-box;
+  color: #fff;
+}
+
+.meaningful {
+  display: flex;
+  flex-flow: column;
+}
+
+.meaningful main {
+  flex: 1;
+}

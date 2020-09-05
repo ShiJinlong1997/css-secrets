@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Trapezoid tabs 梯形标签页</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="3-13.css" />
+</head>
+<body>
+  <div class="tab tab-1">trapezoid</div>
+  <div class="tab bottom-fixed">trapezoid</div>
+  <nav>
+  	<a href="home.html">home</a>
+  	<a href="projects.html">projects</a>
+  	<a href="about.html">about</a>
+  </nav>
+  <ul class="nav-content">
+    <li>home content</li>
+    <li>projects content</li>
+    <li>about content</li>
+  </ul>
+  <script>
+    let nav = document.getElementsByTagName('nav')[0];
+    let nav_item = nav.getElementsByTagName('a');
+    let nav_content = document.getElementsByClassName('nav-content')[0];
+    let nav_content_width = 0;
+    let nav_content_item = nav_content.getElementsByTagName('li');
+    
+    for (let i = 0; i < nav_item.length; ++i) {
+      nav_content_width += nav_item[i].offsetWidth;
+    }
+
+    nav_content.style.width =  nav_content_width + 'px';
+
+    for (let i = 0; i < nav_item.length; ++i) {
+    	nav_item[i].style.left = -i*1 + 'em';
+
+    	nav_item[i].addEventListener('mouseover', () => {
+        nav_content_item[0].style.display = 'none';
+        nav_content_item[0].style.zIndex = -1;
+        nav_content_item[i].style.display = 'block';
+        nav_content_item[i].style.zIndex = 1;
+      });
+
+      nav_item[i].addEventListener('mouseout', () => {
+        nav_content_item[i].style.display = 'none';
+        nav_content_item[i].style.zIndex = -1;
+        nav_content_item[0].style.display = 'block';
+        nav_content_item[0].style.zIndex = 1;
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Folded corner effect 折角效果</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="4-19.css" />
+</head>
+<body>
+  <div class="note deg45-1">我们从右上角具有斜面切角的元素开始，
+这个切角由渐变方案实现。
+先在右上角创建一个斜面切角。
+走到这里已经完成了一半。</div>
+  <div class="note deg45-2">增加一个暗色三角形实现翻折效果。
+增加另一层渐变生成这个三角形并
+将其定位在右上角，
+用<code>background-size</code>控制折角的大小。</div>
+  <div class="note deg45-3">折页部分的三角形放在切角之上却这样，
+渐变中的折角尺寸是写在色标中的，
+它沿渐变轴进行度量，是对角线尺寸；
+<code>background-size</code>是背景贴片的宽高</div>
+  <div class="note deg45-4"><code>background-size</code>会重复两次长度，
+而且绝大多数CSS度量不在对角线上进行，
+要保留水平和垂直方向上的长度，
+就得切角渐变的角标位置值除以√2≈1.4。</div>
+  <div class="note angles-1">现实中折角往往不是45°，
+像-150°能产生30°的切角。
+若只改斜面切角的角度，
+折角不会跟着改变，
+折角的尺寸不是由角度来定义的。
+是宽度和高度来定义的</div>
+  <div class="note angles-2">改变折角的大小，使它更符合整合效果，
+但看起来不真实。
+现实中折页三角形会微微旋转的，
+它的尺寸跟我们从元素角上“切”下来的三角形是一致的。
+∵无法旋转背景，∴伪元素该登场了。</div>
+  <div class="note angles-3">先用伪元素把折角效果实现了遍，
+再把三角形的<code>width</code>和<code>height</code>对调，
+以此改变它的方向。
+这样得到的是和折页缺口对称的三角形，
+而不是补足折页缺口的三角形。
+然后，折页三角形逆时针旋转30°，
+使它的斜边与折线平行。</div>
+  <div class="note angles-4">还需要挪动折页三角形，
+以便三角形折页和三角形缺口斜边重合。
+<code>transform: bottom right;</code>
+让三角形的右下角成为旋转中心，
+让它的右下角保持固定。
+现在只需要要在垂直方向上移动折页三角形。</div>
+</body>
+</html>

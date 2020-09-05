@@ -1,0 +1,16 @@
+@keyframes typing {
+  0% { width: 0; }
+}
+
+@keyframes caret {
+  50% { border-right-color: transparent; }
+}
+
+h1,
+p {
+  border-right: .05em solid CurrentColor;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing,
+             caret infinite;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Realistic text effects 现实中的文字效果</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="5-27.css" />
+</head>
+<body>
+  <p class="description">图形界面中，为按钮生成按下或浮起效果就用到了类似的原理：
+出现在底部的浅色投影（或出现在顶部的暗色投影）会让人产生物体是凹进平面内错觉。同理，出现在底部的暗色投影（或者出现在顶部的浅色投影）会让人产生物体从平面上凸起的错觉。
+我们已习惯光源悬在头顶。在这样的环境下，凸起物的下方会产生阴影，而凹陷的底部边缘则会被打亮。</p>
+  <p class="demo letterpress-1-1 cl">"The only way to get rid of a temptation is to yield to it"</p>
+  <p class="demo letterpress-1-2">"The only way to get rid of a temptation is to yield to it"</p>
+  <p class="description">当在浅色背景上使用深色文字时，底部加上浅色投影通常效果最佳。
+浅度取决于<code>currentColor</code>，以及期望效果有多明显。</p>
+  <p class="description">若把文字和背景的颜色深度对调，样式看起来又会如何呢？</p>
+  <p class="demo letterpress-2-1 cl">"The only way to get rid of a temptation is to yield to it"</p>
+  <p class="demo letterpress-2-2">"The only way to get rid of a temptation is to yield to it"</p>
+  <p class="description">在深色底、浅色文字的情况下，套用之前的投影样式感觉文字变模糊了。
+在这种情况下，给文字顶部加深色投影是最佳方案</p>
+  <p class="description">实现空心字的效果或文字描边很容易，只要用<code>text-shadow</code>属性的扩张参数就能让投影变大，看起来就像给文字勾边了一样。
+这类似于<code>box-shadow</code>的扩张效果来模拟块级元素的边框。</p>
+  <h1 class="stroked stroked-1 cl tac">CSS</h1>
+  <h1 class="stroked stroked-2 tac">CSS</h1>
+  <p class="description">可以使用多个<code>text-shadow</code>，分别给这些投影加上不同方向的偏移。
+还可以重叠多层轻微模糊投影来模拟描边，这种方法无需设置偏移量。</p>
+  <p class="description">∵<code>text-shadow</code>使用了模糊算法，∴性能消耗较高。
+还有，需要的描边越粗，这两种方案产生的效果就越差。</p>
+  <h1 class="stroked stroked-3 cl tac">CSS</h1>
+  <h1 class="usesvg">
+    <svg width="2em" height="1em">
+      <use xlink:href="#css" />
+      <text id="css" x=".18em" y=".85em">CSS</text>
+    </svg>
+  </h1>
+  <p class="description">终极方案SVG，虽说要在结构代码中插入很多乱糟糟的东西，
+但视觉效果是最好的，甚至在不支持SVG的旧浏览器中，文本仍然可读。</p>
+  <p class="description">文字外发光常用于凸显标题，或给链接添加鼠标悬停效果。
+这种方法最简单的版本是用几层重叠的<code>text-shadow</code>，
+不需要考虑偏移量，颜色也只需和文字一致。</p>
+  <a class="glowing cl tac" href="javascript:void();">Glow</a>
+  <a class="glowing-1 tac" href="javascript:void();">Dizzy</a>
+  <p class="description">给鼠标悬停添加这种效果，再加个过渡效果就更好了。
+还可以在<code>:hover</code>状态下隐藏文字，看起来真的像慢慢变模糊。</p>
+  <p class="description">文字凸起的效果主要思路是使用一长串累加的投影，
+不设模糊以1px的跨度逐渐错开，使颜色逐渐变暗，
+然后在底部加一层强烈模糊的暗投影，从而模拟完整的立体效果。</p>
+  <p class="extruded cl tac">CSS3d</p>
+  <p class="extruded-1">RETRO</p>
+  <p class="description">这种效果还有很多变种。比如把所有的投影设置成黑色，并且去掉最底层的投影，就可以模拟出一种复古标志牌中常见的文字效果。</p>
+</body>
+</html>

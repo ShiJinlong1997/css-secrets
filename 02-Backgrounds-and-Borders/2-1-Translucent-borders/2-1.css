@@ -1,0 +1,60 @@
+.bgcp {
+  float: left;
+  height: 10em;
+  padding: 1em;
+  border: 8px dashed #000;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: #9acd32;
+  white-space: pre-wrap;
+}
+
+.bgcp-bb {
+  width: 14em;
+  /* background-clip: border-box; */
+  line-height: 1.5;
+}
+
+.bgcp-pb {
+  width: 17em;
+  background-clip: padding-box;
+  line-height: 4;
+}
+
+.bgcp-cb {
+  width: 17em;
+  background-clip: content-box;
+  line-height: 4;
+}
+
+.tbd {
+  position: relative;
+  float: left;
+  width: 17em;
+  height: 10em;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: url('../../images/stone-art.jpg') no-repeat;
+}
+
+.tbd > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11em;
+  height: 4em;
+  padding: .6em;
+  border: 20px solid hsla(0,0%,100%,.5);
+  background: #fff;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  transform: translate(-50%, -50%);
+}
+
+.tbd-bb {
+  clear: left;
+}
+
+.tbd-pb > div {
+  background-clip: padding-box;
+}

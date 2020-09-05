@@ -1,0 +1,64 @@
+.description {
+  clear: left;
+  width: 32em;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+button {
+  box-sizing: content-box;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-bottom: 32px;
+  font-size: 2.5em;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  background: #58a;
+  background-clip: padding-box;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button:focus { outline: none; }
+
+.bdw {
+  border: 10px solid transparent;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;
+}
+
+.bdw:hover {
+  border-color: #58a;
+}
+
+.bxsh {
+  position: relative;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;
+}
+
+.bxsh::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  /* border: 10px solid transparent; */
+  box-shadow: 0 .1em .2em -.05em rgba(0,0,0,.5);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.bxsh:hover::before {
+  opacity: 1;
+  /* border-color: #58a; */
+}
+
+.bxsh:active { visibility: hidden; }

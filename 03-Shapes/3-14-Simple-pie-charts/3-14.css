@@ -1,0 +1,91 @@
+.pie {
+  float: left;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 100px;
+  text-align: center;
+  color: transparent;
+  background: #9acd32;
+  background-image: linear-gradient(90deg,
+                #9acd32 50%, #655 0);
+  border-radius: 50%;
+}
+
+.pie::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: inherit;
+  /* outline: 1px solid #000; */
+  border-radius: 0 100% 100% 0 / 50%;
+  transform-origin: left;
+}
+
+.pie-108::before {
+  animation: spin108 3s linear infinite;
+}
+
+.pie-180::before {
+  animation: spin180 3s linear infinite;
+}
+
+.pie-252::before {
+  animation: spin252 3s linear infinite,
+             changebgc 6s step-end infinite;
+}
+
+.pie-360::before {
+  animation: spin360 3s linear infinite,
+             changebgc 6s step-end infinite;
+}
+
+.piebgig {
+  float: left;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-top: 16px;
+  margin-left: 16px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: pre-wrap;
+  background: #9acd32;
+  background: conic-gradient(#655 40%, yellow 0);
+  border-radius: 50%;
+}
+
+.piebgig::before {
+  content: none;
+}
+
+svg {
+  position: relative;
+  top: 16px;
+  left: 16px;
+  width: 100px;
+  height: 100px;
+  background: #9acd32;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: #9acd32;
+  stroke: #655;
+  stroke-width: 32;
+  stroke-dasharray: 25 100;
+  animation: fillup 3s linear infinite;
+}
+
+@keyframes spin108 { 100% { transform: rotate(.3turn); } }
+@keyframes spin180 { 100% { transform: rotate(.5turn); } }
+@keyframes spin252 { 100% { transform: rotate(.35turn); } }
+@keyframes spin360 { 100% { transform: rotate(.5turn); } }
+@keyframes changebgc { 50% { background-color: #655; } }
+@keyframes fillup { 100% { stroke-dasharray: 100 100; } }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Flexible background positioning 灵活的背景定位</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="2-3.css" />
+</head>
+<body>
+  <div class="solution">
+    <div class="code-pirate">Code Pirate</div>
+    <p class="description"><code>background-position</code>
+允许指定图片距离任意角的偏移量，
+在偏移量前指定关键字即可</p>
+  </div>
+  <div class="solution">
+    <div class="code-pirate bgo-cb">Code Pirate</div>
+    <p class="description"><code>background-origi: padding-box;(default)</code>
+设置背景图片距离某个角的偏移量时，总有偏移量与容器内边距一致的情况。
+<code>background-origin: content-box;</code>
+能使<code>background-position</code>属性中的边角关键字以内容区的边缘作为基准
+（背景图片距离边角的偏移量跟内边距能一致了）</p>
+  </div>
+  <div class="solution">
+    <div class="code-pirate bgp-calc">Code Pirate</div>
+    <p class="description">背景图片一直距离底边10px且距离右边20px。
+若仍以左上角偏移量的思路来考虑其实是希望
+水平偏移量100% - 20px。
+垂直偏移量100% - 10px，
+<code>calc()函数允许执行此类运算</code></p>
+  </div>
+</body>
+</html>

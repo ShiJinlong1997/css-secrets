@@ -1,0 +1,8 @@
+figure {
+  border: 2px dashed #808080;
+  margin: 0;
+}
+
+.meaningful {
+  max-width: min-content;
+}

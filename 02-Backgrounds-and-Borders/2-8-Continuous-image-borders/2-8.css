@@ -1,0 +1,117 @@
+.clear { clear: left; }
+
+.problem {
+  float: left;
+  width: 50%;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.description {
+  float: left;
+  width: 16em;
+  margin-left: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.issue {
+  width: 16em;
+  margin-left: 1em;
+  list-style-type: square;
+  line-height: 1;
+}
+
+.issue > li {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.something-meaningful {
+  float: left;
+  width: 20em;
+  padding: 1em;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: url('../../images/stone-art.jpg') no-repeat;
+  background-size: cover;
+}
+
+.something-meaningful > div {
+  padding: 1em;
+  background: #fff;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.more-meaningful {
+  float: left;
+  width: 22em;
+  padding: 1em;
+  border: 1em solid transparent;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: linear-gradient(#fff, #fff),
+              url('../../images/stone-art.jpg');
+  background-size: cover;
+  background-clip: padding-box,
+                   border-box;
+  background-origin: border-box;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.vintage-envelope {
+  float: left;
+  width: 10em;
+  padding: 1em;
+  border: 1em solid transparent;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: linear-gradient(#fff, #fff) padding-box,
+              repeating-linear-gradient(-45deg,
+                #f00 0, #f00 12.5%,
+                transparent 0, transparent 25%,
+                #58a 0, #58a 37.5%,
+                transparent 0, transparent 50%)
+              14px 14px / 5em 5em;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.vintage-envelope-bdi {
+  float: left;
+  width: 20em;
+  padding: 1em;
+  border: 16px solid transparent;
+  margin-top: 16px;
+  margin-left: 16px;
+  border-image: 16 repeating-linear-gradient(-45deg,
+                     #f00 0, #f00 1em,
+                     transparent 0, transparent 2em,
+                     #58a 0, #58a 3em,
+                     transparent 0, transparent 4em);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+@keyframes ants { to { background-position: 100%; } }
+
+.marching-ants {
+  float: left;
+  width: 38em;
+  padding: 1em;
+  border: 1px solid transparent;
+  margin-top: 16px;
+  margin-left: 16px;
+  background: linear-gradient(#fff, #fff) padding-box,
+              repeating-linear-gradient(-45deg,
+                #000 0, #000 25%,
+                #fff 0, #fff 50%)
+              0 / .6em .6em;
+  line-height: 1.5;
+  white-space: pre-wrap;            
+  animation: ants 12s linear infinite;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Custom checkboxes 自定义复选框</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="6-31.css" />
+</head>
+<body>
+  <p class="description">解决方案是基于复选框的勾选状态借助组合选择符给其他元素设置样式。
+但是要根据复选框的勾选状态给哪个元素设置样式？是<code>&lt;label&gt;</code>。
+<code>&lt;label&gt;</code>与复选框关联之后，也可以起到触发开关的作用。</p>
+  <p class="description"><code>&lt;label&gt;</code>不是替换元素，∴可以给它添加生成性内容（伪元素），
+并基于复选框的状态来为其设置样式。然后把真正的复选框隐藏起来，（不是把它从tab键切换焦点的队列中完全删除）
+再把生成性内容美化一番，用来顶替原来的复选框。</p>
+  <form>
+    <input id="initial" type="checkbox" />
+    <label for="initial">awesome!</label>
+  </form>
+  <p class="description">接着生成伪元素，作为美化版的复选框。
+先给这个伪元素添加些基本的样式：</p>
+  <form class="basic">
+    <input id="basic-style" type="checkbox" />
+    <label for="basic-style">awesome!</label>
+  </form>
+  <p class="description">上面是复选框和<code>&lt;label&gt;</code>的样子，现在让复选框勾选时有不同的样式。
+比如，换种颜色，再加上勾选标记。</p>
+  <form class="basic basic-1">
+    <input id="basic-style-1" type="checkbox" checked />
+    <label for="basic-style-1">awesome!</label>
+  </form>
+  <p class="description">这个伪元素已经是一个经过简单美化的复选框了，且功能完备。
+现在，把原来的复选框以一种不损失可访问性的方式隐藏起来。
+这意味着不能用<code>display: none;</code>
+∵这会把它从tab键切换焦点的队列中完全删除。</p>
+  <form class="basic basic-1 hidebox">
+    <input id="hide" type="checkbox" />
+    <label for="hide">awesome!</label>
+  </form>
+  <p class="description">完成了一个简单定制化的复选框，现在还可以进一步优化，
+比如在它聚焦或禁用时改变它的样式。</p>
+  <form class="basic basic-1 hidebox otherstatus">
+    <div>
+      <input id="cked" type="checkbox" checked />
+      <label for="cked">awesome!</label>
+    </div>
+    <div>
+      <input id="disabd" type="checkbox" disabled />
+      <label for="disabd">awesome!</label>
+    </div>
+  </form>
+  <form class="on-off">
+    <input id="onoff" type="checkbox" />
+    <label for="onoff">awesome!</label> 
+  </form>
+</body>
+</html>

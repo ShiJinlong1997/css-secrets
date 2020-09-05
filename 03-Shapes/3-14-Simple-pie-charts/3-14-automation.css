@@ -1,0 +1,32 @@
+.pie {
+  float: left;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 100px;
+  text-align: center;
+  color: transparent;
+  /* background: #9acd32; */
+  /* background-image: linear-gradient(90deg,
+                #9acd32 50%, #655 0); */
+  /* border-radius: 50%; */
+}
+
+svg {
+  width: 100px;
+  height: 100px;
+  background: #9acd32;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: #9acd32;
+  stroke: #655;
+  /* stroke-dasharray: 25 100; */
+  /* animation: fillup 3s linear infinite; */
+}
+
+/* @keyframes fillup { 100% { stroke-dasharray: 100 100; } } */

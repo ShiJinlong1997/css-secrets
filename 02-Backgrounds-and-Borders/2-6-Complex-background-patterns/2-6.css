@@ -1,0 +1,221 @@
+.bgig {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.clear {
+  clear: left;
+}
+
+.description {
+  float: left;
+  width: 22em;
+  margin-top: 16px;
+  margin-left: 16px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.grids-1 {
+  background: #fff;
+  background-image: linear-gradient(90deg,
+                      rgba(200,0,0,.5) 50%,
+                      transparent 0),
+                    linear-gradient(
+                      rgba(200,0,0,.5) 50%,
+                      transparent 0);
+  background-size: 30px 30px;
+}
+
+.grids-1-1 {
+  background: #fff;
+  background-image: linear-gradient(90deg,
+                      rgba(200,0,0,.5) 50%,
+                      transparent 0);
+  background-size: 30px 30px;
+}
+
+.grids-1-2 {
+  background: #fff;
+  background-image: linear-gradient(
+                      rgba(200,0,0,.5) 50%,
+                      transparent 0);
+  background-size: 30px 30px;
+}
+
+.grids-2 {
+  background: #58a;
+  background-image: linear-gradient(
+                      #fff 1px, transparent 0),
+                    linear-gradient(90deg,
+                      #fff 1px, transparent 0);
+  background-size: 30px 30px;
+}
+
+.grids-2-1 {
+  background: #58a;
+  background-image: linear-gradient(90deg,
+                      #fff 1px, transparent 0);
+  background-size: 30px 30px;
+}
+
+.grids-2-2 {
+  background: #58a;
+  background-image: linear-gradient(
+                      #fff 1px, transparent 0);
+  background-size: 30px 30px;
+}
+
+.polkadot {
+  background: #655;
+  background-image: radial-gradient(#d2b48c 30%, transparent 0);
+  background-size: 40px 40px;
+}
+
+.polkadot-2 {
+  background: #655;
+  background-image: radial-gradient(#d2b48c 20%, transparent 0),
+                    radial-gradient(#d2b48c 20%, transparent 0);
+  background-size: 40px 40px;
+  background-position: 0 0,
+                       20px 20px;
+}
+
+.polkadot-2-1 {
+  background: #655;
+  background-image: radial-gradient(#d2b48c 20%, transparent 0);
+  background-size: 40px 40px;
+  background-position: 0 0;
+}
+
+.polkadot-2-2 {
+  background: #655;
+  background-image: radial-gradient(#d2b48c 20%, transparent 0);
+  background-size: 40px 40px;
+  background-position: 20px 20px;
+}
+
+.compose-get-square {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 50%, transparent 0),
+                    linear-gradient(45deg,
+                      transparent 50%, #bbb 0);
+  background-size: 30px 30px;
+}
+
+.failure-diagonal {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 50%, transparent 0);
+  background-size: 30px 30px;
+}
+
+.failure-diagonal-other-half {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      transparent 50%, #bbb 50%);
+  background-size: 30px 30px;
+}
+
+.half-original-size-compose {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 25%, transparent 0),
+                    linear-gradient(45deg,
+                      transparent 75%, #bbb 0);
+  background-size: 30px 30px;
+}
+
+.half-original-size {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 25%, transparent 0);
+  background-size: 30px 30px;
+}
+
+.half-original-size-other-half {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      transparent 75%, #bbb 0);
+  background-size: 30px 30px;
+}
+
+.secondg-change-bgp {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 25%, transparent 0),
+                    linear-gradient(45deg,
+                      transparent 75%, #bbb 0);
+  background-position: 0 0,
+                       -15px 15px;
+  background-size: 30px 30px;
+}
+
+.firstg {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 25%, transparent 0);
+  background-size: 30px 30px;
+}
+
+.secondg {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      transparent 75%, #bbb 0);
+  background-position: -15px 15px;
+  background-size: 30px 30px;
+}
+
+.checkerboards {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 25%, transparent 0,
+                      transparent 75%, #bbb 0),
+                    linear-gradient(45deg,
+                      #bbb 25%, transparent 0,
+                      transparent 75%, #bbb 0);
+  background-position: 0 0,
+                       -15px 15px;
+  background-size: 30px 30px;
+}
+
+.checkerboards-half {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 25%, transparent 0,
+                      transparent 75%, #bbb 0);
+  background-position: 0 0;
+  background-size: 30px 30px;
+}
+
+.checkerboards-other-half {
+  background: #eee;
+  background-image: linear-gradient(45deg,
+                      #bbb 25%, transparent 0,
+                      transparent 75%, #bbb 0);
+  background-position: -15px 15px;
+  background-size: 30px 30px;
+}
+
+.hue-wheel {
+  background: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+  line-height: 200px;
+  text-align: center;
+  text-shadow: 2px 2px 1px #666;
+  color: #fff;
+}
+
+.tile-svg {
+  background: #eee url('data:image/svg+xml,\
+              <svg xmlns="http://www.w3.org/2000/svg" \
+                   width="100" height="100" \
+                   fill-opacity=".25">\
+                   <rect x="50" width="50" height="50" /> \
+                   <rect y="50" width="50" height="50" /> \
+                   </svg>');
+  background-size: 30px 30px;
+}

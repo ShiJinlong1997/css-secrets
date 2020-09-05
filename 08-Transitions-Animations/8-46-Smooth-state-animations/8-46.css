@@ -1,0 +1,21 @@
+@keyframes panoramic {
+  100% { background-position-x: 100%; }
+}
+
+.panoramic {
+  width: 820px;
+  height: 410px;
+  background: url(../../images/3904743709_74bc76d5ac_b.jpg) no-repeat;
+  background-size: auto 100%;
+  animation: panoramic 10s infinite linear alternate;
+  /* animation-play-state: paused; */
+  animation-play-state: running; 
+}
+
+.panoramic:hover,
+.panoramic:focus {
+  /* animation-play-state: running; */
+  animation-play-state: paused; 
+}
+
+/* 初始动画状态暂停，在鼠标悬停或元素成为焦点时动画取消暂停 */

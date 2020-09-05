@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Cutout Corners 切角效果</title>
+  <link rel="stylesheet" href="../../public.css" />
+  <link rel="stylesheet" href="3-12.css" />
+</head>
+<body>
+  <div class="note note-1">若只需要一个角被切掉，以右下角为例。
+这其中最大的窍门在于充分利用渐变的一大特性：
+渐变能接受一个（比如45deg）作为方向，
+而且色标的位置信息可以是绝对的长度值，
+这一点丝毫不受容器尺寸影响。</div>
+  <div class="note note-2">若需要两个角被切掉，得加一层渐变.
+默认两层渐变都会填满整个元素，会相互覆盖。
+需要让它们都缩小一半，同时
+<code>background-size: 50% 100%;</code>
+<code>background-repeat: no-repeat;</code></div>
+  <div class="note note-4">四层渐变
+<code>background-size: 50% 50%;</code>
+<code>background-repeat: no-repeat;</code></div>
+  <div class="note note-4-curved">弧形切角</div>
+  <div class="note note-4-bdi"><code>border-image</code>与内联SVG图像产生切角效果，
+<code>border-image</code>会解决缩放问题，
+SVG可以实现与尺寸无关的完美缩放。
+每个切片的尺寸都是1，不是1px，是切片尺寸。
+切角的尺寸是1，直线边缘也都是1。</div>
+  <div class="note note-4-bdibg"><code>background-clip: padding-box;</code>
+背景才不会覆盖边框</div>
+  <div class="note note-4-clip"></div>
+</body>
+</html>
